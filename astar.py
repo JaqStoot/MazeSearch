@@ -96,8 +96,8 @@ def aStar(m):
 #Create Maze and Run Algorithm
 if __name__ == '__main__':
     #Create maze by dimensions below, can be adjusted to anything
-    m = maze(5, 5)
-    m.CreateMaze()
+    m = maze()
+    m.CreateMaze(loadMaze="maze_files/smallMaze.csv")
 
     # run A* search and get results
     path, cost, nodes_expanded, max_depth, max_fringe = aStar(m)

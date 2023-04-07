@@ -31,39 +31,39 @@ def hasWall(arr, x, y, pos):
 
     if pos == "e":
         if y+1 >= arry:
-            return 0
+            return 1
         else:
             if arr[x][y+1] == "%":
-                return 1
-            else:
                 return 0
+            else:
+                return 1
             
     if pos == "w":
         if y-1 < 0:
-            return 0
+            return 1
         else:
             if arr[x][y-1] == "%":
-                return 1
-            else:
                 return 0
+            else:
+                return 1
     
     if pos == "n":
         if x-1 < 0:
-            return 0
+            return 1
         else:
             if arr[x-1][y] == "%":
-                return 1
-            else:
                 return 0
+            else:
+                return 1
             
     if pos == "s":
         if x+1 >= arrx:
-            return 0
+            return 1
         else:
             if arr[x+1][y] == "%":
-                return 1
-            else:
                 return 0
+            else:
+                return 1
 
 result = []
 

@@ -96,8 +96,8 @@ def aStar(m):
 #Create Maze and Run Algorithm
 if __name__ == '__main__':
     #Create maze by dimensions below, can be adjusted to anything
-    m = maze()
-    m.CreateMaze(loadMaze="maze_files/smallMaze.csv")
+    m = maze(10,10) #changeable to any dimensions for the maze
+    m.CreateMaze()
 
     # run A* search and get results
     path, cost, nodes_expanded, max_depth, max_fringe = aStar(m)
@@ -105,9 +105,9 @@ if __name__ == '__main__':
     # display maze and solution path
     a = agent(m, footprints=True)
     m.tracePath({a: path})
-    l1 = textLabel(m, 'A* Path Length', cost+1)
-    l2 = textLabel(m, 'Nodes Expanded', nodes_expanded)
-    l3 = textLabel(m, 'Max Depth', max_depth)
-    l4 = textLabel(m, 'Max Fringe', max_fringe)
+    l1 = textLabel(m, 'A* Path Cost:', cost)
+    l2 = textLabel(m, 'Nodes Expanded:', nodes_expanded)
+    l3 = textLabel(m, 'Max Depth:', max_depth)
+    l4 = textLabel(m, 'Max Fringe:', max_fringe)
 
     m.run()
